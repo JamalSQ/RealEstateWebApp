@@ -124,18 +124,18 @@
                     </div>
                 </div>
                 <!-- Second nav tabs -->
-                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <ul class="nav nav-pills mb-3 active" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#discription" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Discription</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link " id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#PriceIndex" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Amenities</button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#loAndNearby" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Location & Nearby</button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#HomeFinance" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Home Finance</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#PriceIndex" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Price Index</button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#Trends" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Trends</button>
@@ -173,23 +173,130 @@ If You Want To Live In An Environment Which Is Absolutely Secured And Peaceful
 Then It Is The Right Time And The Right Place To Invest Your
                         </pre>
                     </div>
-                    <div class="tab-pane fade" id="loAndNearby" role="tabpanel" aria-labelledby="pills-profile-tab">Location and nearby</div>
-                    <div class="tab-pane fade" id="HomeFinance" role="tabpanel" aria-labelledby="pills-contact-tab">Home finance</div>
-                    <div class="tab-pane fade" id="PriceIndex" role="tabpanel" aria-labelledby="pills-profile-tab">Price index</div>
-                    <div class="tab-pane fade" id="Trends" role="tabpanel" aria-labelledby="pills-profile-tab">Trends</div>
+                    <div class="tab-pane fade" id="PriceIndex" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div class="container-fluid">
+                            @for($i=1; $i<=5; $i++)
+                                <div class="row bg-light mb-3">
+                                <div class="col-md-2 d-flex align-items-center justify-content-center">
+                                    <!-- Icon First, Text After -->
+                                    <span class="justify-content-center">Amenities</span>
+                                    <div class="vertical-line"></div>
+
+                                </div>
+                                <div class="col-md-10 d-flex flex-wrap gap-2 p-3 justify-content-around">
+                                    <div class="row">
+                                        <!-- Each feature is displayed horizontally in these columns -->
+                                        <div class="col-md-4">
+                                            <i class="fa fa-calendar" style="font-size: 20px; margin-right: 10px;"></i>
+                                            <span>Built in year: 2024</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <i class="fa fa-calendar" style="font-size: 20px; margin-right: 10px;"></i>
+                                            <span>Built in year: 2024</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <i class="fa fa-calendar" style="font-size: 20px; margin-right: 10px;"></i>
+                                            <span>Built in year: 2024</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <!-- Each feature is displayed horizontally in these columns -->
+                                        <div class="col-md-4">
+                                            <i class="fa fa-calendar" style="font-size: 20px; margin-right: 10px;"></i>
+                                            <span>Built in year: 2024</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <i class="fa fa-calendar" style="font-size: 20px; margin-right: 10px;"></i>
+                                            <span>Built in year: 2024</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <i class="fa fa-calendar" style="font-size: 20px; margin-right: 10px;"></i>
+                                            <span>Built in year: 2024</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <!-- Each feature is displayed horizontally in these columns -->
+                                        <div class="col-md-4">
+                                            <i class="fa fa-calendar" style="font-size: 20px; margin-right: 10px;"></i>
+                                            <span>Built in year: 2024</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <i class="fa fa-calendar" style="font-size: 20px; margin-right: 10px;"></i>
+                                            <span>Built in year: 2024</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <i class="fa fa-calendar" style="font-size: 20px; margin-right: 10px;"></i>
+                                            <span>Built in year: 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        @endfor
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="loAndNearby" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div class="container-fluid">
+                        <div class="row">
+                            @for($i=1; $i<=4; $i++)
+                                <div class="col-md-3">
+                                <div class="card" style="width: 12rem;">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.46869503901!2d74.20800227435085!3d31.401210353021792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3918ff6b2f163a41%3A0x84230dc9cdeda2b!2sCOMSATS%20Lahore%20N-BLOCK!5e0!3m2!1sen!2s!4v1738238552241!5m2!1sen!2s" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    <div class="card-body">
+                                        <h5 class="card-title">School</h5>
+                                    </div>
+                                </div>
+                        </div>
+                        @endfor
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <h3>Get in Touch</h3>
-                <form action="#" method="POST">
-                    @csrf
-                    <input type="text" name="name" class="form-control mb-3" placeholder="Your Name" required>
-                    <input type="email" name="email" class="form-control mb-3" placeholder="Your Email" required>
-                    <textarea name="message" class="form-control mb-3" rows="11" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn btn-dark w-100">Send Message</button>
-                </form>
+            <div class="tab-pane fade" id="HomeFinance" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <div class="calculator-container">
+                    <h2>Land Price Calculator</h2>
+                    <div class="form-group priceCal">
+                        <label for="sqft">Enter Land Area in Square Feet:</label>
+                        <input
+                            type="number"
+                            id="sqft"
+                            placeholder="e.g. 1000"
+                            min="1"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label for="pricePerSqft">Enter Price per Square Foot:</label>
+                        <input
+                            type="number"
+                            id="pricePerSqft"
+                            placeholder="e.g. 100"
+                            min="1"
+                            required />
+                    </div>
+                    <button class="btn btn-primary" onclick="calculatePrice()">Calculate Price</button>
+
+                    <div class="result" id="result">
+                        <!-- Result will be displayed here -->
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="Trends" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="trendchart">
+                    <h2>Search Trends Over Time</h2>
+                    <canvas id="searchTrendsChart"></canvas>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="col-md-4">
+        <h3>Get in Touch</h3>
+        <form action="#" method="POST">
+            @csrf
+            <input type="text" name="name" class="form-control mb-3" placeholder="Your Name" required>
+            <input type="email" name="email" class="form-control mb-3" placeholder="Your Email" required>
+            <textarea name="message" class="form-control mb-3" rows="11" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn btn-dark w-100">Send Message</button>
+        </form>
+    </div>
+    </div>
     </div>
 </section>
 @endsection

@@ -109,13 +109,16 @@
           </a>
         </li>
       </ul>
-      <form class="d-flex">
+      <form class="d-flex align-items-center">
         <div class="input-group">
-          <input class="form-control" type="text" placeholder=" Search by Price and Location" class="p-3" size="40%">
-          <button class="btn btn-warning" type="button">Search</button>
-          <button class="btn btn-dark"><a href="{{url('property/Filters')}}" class="nav-link">Filter</a></button>
+          <input class="form-control me-2" type="text" placeholder="Search by Price and Location" style="width: 300px;">
+          <button class="btn btn-warning me-2" type="button">Search</button>
+          <button class="btn btn-dark">
+            <a href="{{url('property/Filters')}}" class="nav-link text-white">Filter</a>
+          </button>
         </div>
       </form>
+
     </div>
   </div>
 </nav>

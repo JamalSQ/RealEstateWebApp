@@ -98,6 +98,77 @@
 <!-- Bootstrap JS Bundle (includes Popper.js) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.datatables.net/2.2.1/js/dataTables.min.js"></script>
+
+
+<!-- charts js -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="{{asset('js/custome.js')}}"></script>
+
+<script>
+  // Sample data for the chart
+  const searchData = {
+    labels: [
+      "New York",
+      "Los Angeles",
+      "Chicago",
+      "Houston",
+      "Phoenix",
+      "Philadelphia",
+      "San Antonio"
+    ], // X-axis: Time (Months)
+    datasets: [{
+      label: "Search Trends (in searches)", // Y-axis: Number of searches
+      data: [150, 200, 250, 300, 400, 450, 500], // Example search data
+      backgroundColor: "rgba(75, 192, 192, 0.6)", // Bar color
+      borderColor: "rgba(75, 192, 192, 1)", // Bar border color
+      borderWidth: 1,
+      hoverBackgroundColor: "rgba(75, 192, 192, 0.8)", // Hover effect
+      hoverBorderColor: "rgba(75, 192, 192, 1)", // Hover effect border color
+    }, ],
+  };
+
+  const config = {
+    type: "bar", // Bar chart type
+    data: searchData,
+    options: {
+      responsive: true,
+      indexAxis: 'y',
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: "Time (Months)", // X-axis label
+          },
+        },
+        y: {
+          title: {
+            display: true,
+            text: "Searches", // Y-axis label
+          },
+          beginAtZero: true, // Start Y-axis from 0
+          ticks: {
+            stepSize: 50, // Set step size for Y-axis ticks
+          },
+        },
+      },
+      plugins: {
+        tooltip: {
+          enabled: true, // Enable tooltips on hover
+          callbacks: {
+            label: function(tooltipItem) {
+              return `${tooltipItem.raw} Searches`; // Display the search count on hover
+            },
+          },
+        },
+      },
+    },
+  };
+
+  // Create the chart
+  const ctx = document.getElementById("searchTrendsChart").getContext("2d");
+  const searchTrendsChart = new Chart(ctx, config);
+</script>
+
 
 </html>
