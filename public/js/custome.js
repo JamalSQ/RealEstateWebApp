@@ -28,3 +28,65 @@ function calculatePrice() {
         });
     document.getElementById("result").style.color = "green";
 }
+
+// wizord form js
+const steps = document.querySelectorAll(".step");
+const stepIndicators = document.querySelectorAll(".step-indicator-item");
+let currentStep = 1;
+
+function showStep(stepIndex) {
+    steps.forEach((step, index) => {
+        if (index === stepIndex - 1) {
+            step.classList.add("active");
+        } else {
+            step.classList.remove("active");
+        }
+    });
+
+    stepIndicators.forEach((indicator, index) => {
+        if (index < stepIndex) {
+            indicator.classList.add("completed"); // Add completed class FIRST
+        } else {
+            indicator.classList.remove("completed");
+        }
+
+        if (index === stepIndex - 1) {
+            indicator.classList.add("active");
+        } else {
+            indicator.classList.remove("active");
+        }
+    });
+}
+
+showStep(currentStep); // Initialize the first step
+
+document.querySelectorAll(".nextBtn").forEach((button) => {
+    button.addEventListener("click", () => {
+        currentStep = Math.min(currentStep + 1, steps.length);
+        showStep(currentStep);
+    });
+});
+
+document.querySelectorAll(".prevBtn").forEach((button) => {
+    button.addEventListener("click", () => {
+        currentStep = Math.max(currentStep - 1, 1);
+        showStep(currentStep);
+    });
+});
+
+stepIndicators.forEach((indicator) => {
+    indicator.addEventListener("click", () => {
+        const step = parseInt(indicator.dataset.step);
+        currentStep = step;
+        showStep(currentStep);
+    });
+});
+
+document
+    .getElementById("propertyForm")
+    .addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission for demo
+
+        // Here you would typically handle form submission, e.g., using AJAX
+        alert("Form submitted!"); // Placeholder for submission logic
+    });

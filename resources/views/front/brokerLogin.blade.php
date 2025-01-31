@@ -1,12 +1,12 @@
 @include('front.includes.header')
+@include('front.includes.navbar_front')
 <div>
-  <div class="container bg-gradient-dark text-white rounded shadow-lg" style="background: linear-gradient(to right, #000, #cfb8b847); ">
+  <div class="container bg-dark text-white rounded shadow-lg my-5">
     <div class="row justify-content-center align-items-center mt-2" style="max-width: 100%; height: auto;">
-
-      <div class="col-md-6 d-flex justify-content-center">
-        <img src="{{asset('image/house_veertical.jpg')}}" class="img-fluid rounded-3 shadow-lg m-3  " alt="Blue Color House" />
+      <div class="col-md-5 d-flex justify-content-center">
+        <img src="{{asset('image/house_veertical.jpg')}}" class="img-fluid rounded-3 shadow-lg m-3" alt="Blue Color House" />
       </div>
-      <div class="col-md-6">
+      <div class="col-md-5">
         <h1 class="text-center text-white mb-4">Broker Login</h1>
         <span class="text-white">Does not have an account?
           <a href="{{url('front/brokerReg')}}" class="text-white">Register</a>
@@ -54,15 +54,13 @@
             </button>
           </div>
           @endif
-
         </form>
         <br />
         <h6 class="text-center text-white mb-4">Or Register with</h6>
-
         <!-- Social Media Buttons -->
-        <div class="row">
-          <button type="button" name="google" class="btn btn-danger mr-3 col-md-5 ">Google</button>
-          <button type="button" name="apple" class="btn btn-dark col-md-5">Apple</button>
+        <div class="row d-flex justify-content-center">
+          <button type="button" name="google" class="btn btn-danger mr-3 p-2 col-md-3 ">Google</button>
+          <button type="button" name="apple" class="btn btn-light p-2 col-md-3">Apple</button>
         </div>
       </div>
 

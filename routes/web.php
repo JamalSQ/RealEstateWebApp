@@ -9,6 +9,7 @@ use App\Http\Controllers\adminLoginController;
 use App\Http\Controllers\brokerLoginController;
 use App\Http\Controllers\customerLoginController;
 use App\Http\Controllers\frontController;
+use App\Http\Controllers\brokerPortalController;
 
 
 /*
@@ -35,13 +36,7 @@ Route::get('front/property', [frontController::class, 'property']);
 Route::get('front/contactus', [frontController::class, 'contactus']);
 Route::get('front/blog', [frontController::class, 'blog']);
 Route::get('property/Filters', [frontController::class, 'filterproprty']);
-
 Route::get('front/property/details', [frontController::class, 'propertydetail']);
-
-
-
-
-
 
 
 // Admin authorization
@@ -142,3 +137,15 @@ Route::get('front/customerInsert/delete/{id}', [customerLoginController::class, 
 Route::post('front/brokerInsert', [brokerLoginController::class, 'manage_broker_process']);
 Route::get('front/brokerInsert', [brokerLoginController::class, 'index']);
 Route::get('front/brokerInsert/delete/{id}', [brokerLoginController::class, 'delete']);
+
+//  broker Portal Routes
+Route::get('broker/portal/dashboard', [brokerPortalController::class, 'index']);
+Route::get('broker/portal/addProperty', [brokerPortalController::class, 'addProperty']);
+Route::get('broker/portal/ListAllProperty', [brokerPortalController::class, 'ListAllProperty']);
+Route::get('broker/portal/offers', [brokerPortalController::class, 'offers']);
+Route::get('broker/portal/notifications', [brokerPortalController::class, 'notifications']);
+Route::get('broker/portal/messages/chats', [brokerPortalController::class, 'chats']);
+Route::get('broker/portal/history', [brokerPortalController::class, 'history']);
+Route::get('broker/portal/propertyAnalytics', [brokerPortalController::class, 'propertyAnalytics']);
+Route::get('broker/portal/accountSettings', [brokerPortalController::class, 'accountSettings']);
+Route::get('broker/portal/supportResources', [brokerPortalController::class, 'supportResources']);

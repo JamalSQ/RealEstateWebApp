@@ -124,21 +124,21 @@
                     </div>
                 </div>
                 <!-- Second nav tabs -->
-                <ul class="nav nav-pills mb-3 active" id="pills-tab" role="tablist">
+                <ul class="nav nav-pills mb-3 active bg-dark p-3 text-white shadow-sm rounded-2" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#discription" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Discription</button>
+                        <button class="nav-link active secondbar-bg-color" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#discription" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Discription</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link " id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#PriceIndex" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Amenities</button>
+                        <button class="nav-link secondbar-bg-color" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#PriceIndex" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Amenities</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#loAndNearby" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Location & Nearby</button>
+                        <button class="nav-link secondbar-bg-color" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#loAndNearby" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Location & Nearby</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#HomeFinance" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Home Finance</button>
+                        <button class="nav-link secondbar-bg-color" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#HomeFinance" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Home Finance</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#Trends" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Trends</button>
+                        <button class="nav-link secondbar-bg-color" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#Trends" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Trends</button>
                     </li>
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
@@ -262,7 +262,7 @@ Then It Is The Right Time And The Right Place To Invest Your
                             min="1"
                             required />
                     </div>
-                    <div class="form-group">
+                    <div class="form-group priceCal">
                         <label for="pricePerSqft">Enter Price per Square Foot:</label>
                         <input
                             type="number"
@@ -271,7 +271,7 @@ Then It Is The Right Time And The Right Place To Invest Your
                             min="1"
                             required />
                     </div>
-                    <button class="btn btn-primary" onclick="calculatePrice()">Calculate Price</button>
+                    <button class="btn btn-primary calbtn" onclick="calculatePrice()">Calculate Price</button>
 
                     <div class="result" id="result">
                         <!-- Result will be displayed here -->

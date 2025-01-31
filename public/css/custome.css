@@ -195,6 +195,8 @@ button[name="apple"] {
 .nav-item .nav-link:hover {
     background: #ffa500;
     color: white;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 /* Navbar End */
@@ -453,8 +455,7 @@ button[name="apple"] {
 .navbar-nav .nav-link.active {
     color: #ffa500 !important;
 }
-.nav-item .nav-link:hover {
-    background-color: #ffa500;
+.navbar-nav .nav-link.active:hover {
     color: #ffffff !important;
 }
 
@@ -648,37 +649,13 @@ button[name="apple"] {
     text-align: center;
     margin-bottom: 20px;
 }
-.form-group {
-    margin-bottom: 15px;
-}
-.form-group label {
-    font-size: 14px;
-    display: block;
-    margin-bottom: 5px;
-}
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-.form-group input[type="number"] {
-    -moz-appearance: textfield;
-}
-.form-group input[type="number"]::-webkit-outer-spin-button,
-.form-group input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
 .result {
     font-size: 18px;
     font-weight: bold;
     margin-top: 20px;
     text-align: center;
 }
-.btn {
+.calbtn {
     width: 100%;
     padding: 10px;
     background-color: #007bff;
@@ -689,7 +666,32 @@ button[name="apple"] {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-.btn:hover {
+.calbtn:hover {
     background-color: #0056b3;
 }
+.priceCal {
+    margin-bottom: 15px;
+}
+.priceCal label {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+}
+.priceCal input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.secondbar-bg-color {
+    letter-spacing: 3px !important;
+    color: white !important;
+    font-family: "Poppins";
+}
 /* charts */
+
+.col-md-4-5 {
+    width: 37.5% !important;
+}

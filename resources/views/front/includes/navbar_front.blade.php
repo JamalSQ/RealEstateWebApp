@@ -39,7 +39,7 @@
       if (session()->has('BROKER_LOGIN')) {
       ?>
         <li class="nav-item">
-          <a class="nav-link" href="{{url('broker/logout')}}">Logout</a>
+          <a class="nav-link" href="{{url('broker/portal/dashboard')}}">Seller Portal</a>
         </li>
       <?php }
       if (!session()->has('BROKER_LOGIN') && !session()->has('CUSTOMER_LOGIN')) { // Only show these options when both are not logged in
@@ -111,14 +111,13 @@
       </ul>
       <form class="d-flex align-items-center">
         <div class="input-group">
-          <input class="form-control me-2" type="text" placeholder="Search by Price and Location" style="width: 300px;">
-          <button class="btn btn-warning me-2" type="button">Search</button>
+          <input class="form-control" type="text" placeholder="Search by Price and Location" style="width: 300px;">
+          <button class="btn btn-warning" type="button">Search</button>
           <button class="btn btn-dark">
             <a href="{{url('property/Filters')}}" class="nav-link text-white">Filter</a>
           </button>
         </div>
       </form>
-
     </div>
   </div>
 </nav>
