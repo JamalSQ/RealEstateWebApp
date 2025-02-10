@@ -8,37 +8,34 @@
     <div class="card-body">
       <p class="login-box-msg text-center">Admin Login</p>
       <form action="{{Route('admin.auth')}}" method="POST">
-      @csrf
+        @csrf
         <div class="input-group mb-3">
           <input type="email" class="form-control" placeholder="Email" name="email">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
+          <div class="input-group-text">
+            <span class="fas fa-envelope"></span>
           </div>
         </div>
         <div class="input-group mb-3">
           <input type="password" class="form-control" placeholder="Password" name="password">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
+          <div class="input-group-text">
+            <span class="fas fa-lock"></span>
           </div>
         </div>
-        
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-          </div>
-          <!-- /.col -->
-          @if (session()->has('error'))
-            <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show mt-3">
-                {{session('error')}}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            @endif 
+        <div class="col-4">
+          <button type="submit" class="btn btn-primary m-0">Sign In</button>
+        </div>
       </form>
-    <!-- /.card-body -->
+      <!-- /.card-body -->
+    </div>
+    <div id="toast-container"></div>
+    @if (session()->has('error'))
+    <script>
+      window.onload = function() {
+        showToast('{{ session("error") }}', 'error');
+      };
+    </script>
+    @endif
+
+    <!-- /.card -->
   </div>
-  <!-- /.card -->
-</div>
+  @include('admin.includes.footer')

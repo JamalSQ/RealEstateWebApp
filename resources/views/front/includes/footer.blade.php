@@ -104,6 +104,7 @@
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="{{asset('js/custome.js')}}"></script>
+<script src="{{asset('js/common.js')}}"></script>
 
 <script>
   // Sample data for the chart

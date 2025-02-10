@@ -2,68 +2,54 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\broker;
-use App\Models\per_broker_record;
+use App\Http\Requests\BrokerRequest; // Use the custom request class
+use App\Models\Broker;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 
-class brokerLoginController extends Controller
+class BrokerLoginController extends Controller
 {
-    public function index(){
+    // Display broker registration page
+    public function index()
+    {
         return view('front.brokerReg');
     }
-    
 
-    // public function index()
-    // {
-    //     $result['data']=Size::all();
-    //     return view('admin/size',$result);
-    // }
-
-    public function  manage_broker_process(request $request)
+    // Handle broker creation
+    public function manage_broker_process(BrokerRequest $request)
     {
-        if($request->post('id') > 0){
-            // Sizes Updated code
-             $model=customer::find($request->post('id'));
-             $request->session()->flash('message','Sizes updated');
-             $model->size=$request->post('size');
-             $model->status=0;
-             return redirect('admin/size');
-        }else{
-            $date = Carbon::today();           
-            // for permonent record
-            $model1= new per_broker_record;
-            $id=random_int (100000,999999);
-            $model1->id=$id;
-            $model1->bc_name=$request->post('bc_name');
-            $model1->bc_number=$request->post('bc_number');
-            $model1->b_city=$request->post('b_city');
-            $model1->b_pass=$request->post('pass');
-            $model1->b_name=$request->post('b_name');
-            $model1->b_pass=$request->post('b_pass');
-            $model1->b_sname=$request->post('b_sname');
-            $model1->b_email=$request->post('b_email');
-            $model1->b_phoneno=$request->post('b_phoneno');
-            $model1->is_member_of_fmi=$request->post('is_member_of_fmi');
-            $model1->b_working_area=$request->post('b_working_area');
-            $model1->b_customer_area=$request->post('b_customer_area');
-            $model1->is_approved='0';
-            $model1->created_at=$date;
-            $model= new broker;
 
-            // for temporary record
-        };
-            
-            $model1->save();
-            $request->session()->flash('message','Customer Inserted');
+        try {
+            $this->createBroker($request);
+            $request->session()->flash('success', 'Broker record inserted');
             return redirect('front/brokerInsert');
+        } catch (\Exception $e) {
+            Log::error('Broker creation failed', ['error' => $e->getMessage()]);
+            $request->session()->flash('error', 'An error occurred while processing your request.');
+            return redirect('front/brokerInsert');
+        }
     }
-    public function delete(request $request,$id){
 
-        $model=broker::find($id);
-        $model->delete();
-        $request->session()->flash('message','customer deleted');
+    // Delete broker
+    public function delete(Request $request, $id)
+    {
+        Broker::findOrFail($id)->delete();
+        $request->session()->flash('message', 'Broker record deleted');
         return redirect('admin/broker');
     }
 
+    // Helper method to create broker
+    private function createBroker(BrokerRequest $request)
+    {
+        $brokerData = array_merge($request->validated(), [
+            // 'id' => (string) Str::uuid(),
+            'id' => random_int(111111, 999999),
+            'created_at' => Carbon::now(),
+            'is_approved' => '0',
+        ]);
+        Broker::create($brokerData);
+    }
 }

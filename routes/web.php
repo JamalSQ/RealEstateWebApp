@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\abcController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BrokerController;
@@ -27,6 +28,7 @@ use App\Http\Controllers\brokerPortalController;
 //     return view('front.index');
 // });
 
+Route::resource('posts', abcController::class);
 
 
 // Front pages 
@@ -81,8 +83,6 @@ Route::group(['middleware' => 'broker_auth'], function () {
     // routs for brokers
     Route::get('front/Regbroker', [BrokerController::class, 'show_all_broker']);
 });
-
-
 
 
 // broker and customer login check
@@ -149,3 +149,7 @@ Route::get('broker/portal/history', [brokerPortalController::class, 'history']);
 Route::get('broker/portal/propertyAnalytics', [brokerPortalController::class, 'propertyAnalytics']);
 Route::get('broker/portal/accountSettings', [brokerPortalController::class, 'accountSettings']);
 Route::get('broker/portal/supportResources', [brokerPortalController::class, 'supportResources']);
+
+// send email testing purpose
+// Route::get('sendmail', [brokerPortalController::class, 'sendmail']);
+Route::get('allemail', [brokerPortalController::class, 'sendbatchmailall']);

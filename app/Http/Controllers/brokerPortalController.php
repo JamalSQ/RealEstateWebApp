@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SendBatchEmail;
 use Illuminate\Http\Request;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -55,5 +56,20 @@ class brokerPortalController extends Controller
     public function supportResources()
     {
         return view('brokerportal.supportResources');
+    }
+
+    public function sendbatchmailall()
+    {
+        $recipients = [
+            'qadrij688@gmail.com',
+            // Add more recipients here
+        ];
+
+        $messageContent = 'Hello, this is a batch email notification!';
+        // SendBatchEmail::dispatch($recipients);
+        SendBatchEmail::dispatch();
+
+
+        // Return a success message as a JSON response
     }
 }

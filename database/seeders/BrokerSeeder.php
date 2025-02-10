@@ -38,5 +38,4 @@ class BrokerSeeder extends Seeder
             ]);
         }
     }
-
 }

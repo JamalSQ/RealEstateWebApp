@@ -27,13 +27,14 @@ class CreateCustomersTable extends Migration
             $table->string('total_child');
             $table->string('city_where_buy_house');
             $table->string('area_of_house');
-            $table->enum('is_garage', array('0', '1')); 
-            $table->enum('is_seaview', array('0', '1')); 
+            $table->enum('is_garage', array('0', '1'));
+            $table->enum('is_seaview', array('0', '1'));
             $table->text('budget');
-            $table->enum('is_renovated', array('0', '1')); 
+            $table->enum('is_renovated', array('0', '1'));
             $table->string('new_house_move_time');
             $table->string('want_help_from_broker');
             $table->text('more_info');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

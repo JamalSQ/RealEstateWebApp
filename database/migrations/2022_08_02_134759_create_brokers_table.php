@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('b_working_area');
             $table->string('b_customer_area');
             $table->enum('is_approved', array('0', '1'));
+            $table->softDeletes();
             $table->timestamps();
         });
     }

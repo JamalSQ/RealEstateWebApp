@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,12 +18,10 @@
 
   <!-- data tables -->
   <link rel="stylesheet" href="https://cdn.datatables.net/2.2.1/css/dataTables.dataTables.min.css">
-  
+  <link rel="stylesheet" href="{{asset('css/common.css')}}">
+
   <!-- Admin Custome CSS -->
-  <!-- <link rel="stylesheet" href="{{asset('css/adminStyle.css')}}"> -->
-
-
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
 
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">

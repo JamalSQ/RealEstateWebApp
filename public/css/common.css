@@ -1,0 +1,52 @@
+/* Toats styles */
+#toast-container {
+    position: fixed;
+    top: 30px; /* Margin from the top */
+    right: 20px; /* Position from the right edge */
+    z-index: 9999;
+}
+
+.toast {
+    background-color: #333;
+    color: #fff !important;
+    padding: 15px !important;
+    margin: 10px !important;
+    border-radius: 5px !important;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.5s, transform 0.5s;
+    max-width: 300px !important;
+    font-size: 16px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.toast.hide {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.toast-success {
+    background-color: #4caf50 !important;
+}
+
+.toast-error {
+    background-color: #f44336;
+}
+
+.toast-info {
+    background-color: #2196f3;
+}
+
+.toast-warning {
+    background-color: #ff9800;
+}
+
+/* button {
+    margin-top: 100px;
+    margin-left: 100px;
+} */
