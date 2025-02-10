@@ -7,8 +7,6 @@ use App\Models\broker;
 use App\Models\brokerlastlogin;
 use App\Models\searchByBroker;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
-use App\Jobs\SendBrokerAccountApprovedEmail;
 
 class BrokerController extends Controller
 {
@@ -89,5 +87,27 @@ class BrokerController extends Controller
     {
         $result['data'] = searchByBroker::all();
         return view('admin.Bsearch', $result);
+    }
+
+    public function deletedBrokers()
+    {
+        $result['data'] = broker::onlyTrashed()->get();
+        return view('admin.deletedbroker', $result);
+    }
+
+    public function restoreBroker($id)
+    {
+        $brokerRecord = broker::withTrashed()->find($id);
+        $brokerRecord->restore();
+        // Redirect back to the broker record page with a flash message
+        return redirect('admin/broker')->with('message', 'The broker has been restored. See it in the list of all brokers.');
+    }
+
+    public function permanentdeletebroker($id)
+    {
+        $perDelbroRecord = broker::withTrashed()->find($id);
+        $perDelbroRecord->forceDelete();
+        // Redirect back to the broker record page with a flash message
+        return redirect('admin/admin/broker/deleted')->with('message', 'The broker has been deleted permanantly.');
     }
 }

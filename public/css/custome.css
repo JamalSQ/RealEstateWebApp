@@ -695,3 +695,6 @@ button[name="apple"] {
 .col-md-4-5 {
     width: 37.5% !important;
 }
+#myTable > thead > tr > th {
+    text-align: center;
+}

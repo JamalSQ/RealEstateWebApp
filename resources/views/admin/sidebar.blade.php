@@ -42,7 +42,7 @@
                           <a href="{{url('admin/admin/broker/search')}}" class="sidebar-link @yield('searches_selected')">Broker Trends Searches</a>
                       </li>
                       <li class="sidebar-item">
-                          <a href="#" class="sidebar-link"> Premium Brokers</a>
+                          <a href="{{url('admin/admin/broker/deleted')}}" class="sidebar-link @yield('deleted_brokers_selected')">Brokers TrashBin</a>
                       </li>
                   </ul>
               </li>

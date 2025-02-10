@@ -61,13 +61,16 @@ Route::group(['middleware' => 'admin_auth'], function () {
 
 
     // Routs for brokers
-    Route::get('admin/broker', [BrokerController::class, 'show']);
+    Route::get('admin/broker', [BrokerController::class, 'show'])->name("admin.broker");
     Route::get('admin/customer/show_broker_details/{id}', [BrokerController::class, 'show_broker']);
     Route::get('admin/broker/status/{status}/{id}', [BrokerController::class, 'status']);
 
 
     // Searches done by broker
     Route::get('admin/admin/broker/search', [BrokerController::class, 'searches']);
+    Route::get('admin/admin/broker/deleted', [BrokerController::class, 'deletedBrokers']);
+    Route::get('admin/broker/restore/{id}', [BrokerController::class, 'restoreBroker']);
+    Route::get('front/broker/permanantDelete/{id}', [BrokerController::class, 'permanentdeletebroker']);
 });
 
 Route::get('front/customer/show_customer_details/{id}', [CustomerController::class, 'show_CT_broker']);
